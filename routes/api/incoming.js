@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
     process.env.twilio_accountSid,
     process.env.twilio_authToken
   );
-  
+
   const { MessagingResponse } = twilio.twiml;
 
   let welcome = ``;
@@ -47,7 +47,6 @@ router.post("/", (req, res) => {
     *Countries stats about corona virus*
     %0a
     ${msg.map(record => {
-      if(record >= 20) return;
       return `
         *${record.country}*%0a
         *confirmed*: ${record.confirmed}%0a
@@ -61,7 +60,7 @@ router.post("/", (req, res) => {
 
         client.messages
           .create({
-            body: `${welcome}`,
+            body: `${welcome.substring(0, 1500)}`,
             from: "whatsapp:+14155238886",
             to: "whatsapp:+2347057325184"
           })
