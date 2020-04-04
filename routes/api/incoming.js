@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
           if (data.hasOwnProperty(country)) {
             const put = {
               country,
-              ...data[country][0]
+              ...data[country][msg.length]
             };
 
             msg.push(put);
