@@ -38,21 +38,21 @@ router.post("/", (req, res) => {
         }
 
     welcome = `
-    *Welcome to the WavyNerd COVID-19 Helper* %0a
-    %0a
-    Get Information and guidance from WHO regarding the current outbreak of coronavirus %0a
-    %0a
-    For Now we are still working on the bot, but you can view this information for now %0a
-    %0a
+    *Welcome to the WavyNerd COVID-19 Helper* 
+    
+    Get Information and guidance from WHO regarding the current outbreak of coronavirus 
+    
+    For Now we are still working on the bot, but you can view this information for now 
+    
     *Countries stats about corona virus*
-    %0a
+    
     ${msg.map(record => {
       return `
-        *${record.country}*%0a
-        *confirmed*: ${record.confirmed}%0a
-        *deaths*: ${record.deaths}%0a
-        *recovered*: ${record.recovered}%0a
-        %0a
+        *${record.country}*
+        *confirmed*: ${record.confirmed}
+        *deaths*: ${record.deaths}
+        *recovered*: ${record.recovered}
+        
       `;
     })}
 
