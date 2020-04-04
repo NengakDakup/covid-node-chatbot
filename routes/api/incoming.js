@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
     process.env.twilio_accountSid,
     process.env.twilio_authToken
   );
-
+h
   const { MessagingResponse } = twilio.twiml;
 
   let welcome = ``;
@@ -47,6 +47,7 @@ router.post("/", (req, res) => {
     *Countries stats about corona virus*
     %0a
     ${msg.map(record => {
+      if(record >= 20) return;
       return `
         *${record.country}*%0a
         *confirmed*: ${record.confirmed}%0a
